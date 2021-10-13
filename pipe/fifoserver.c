@@ -7,7 +7,8 @@
 #define FIFO_NAME "MyFifo"
 
 int main(void){
-    int fifofd, ret;
+    int fifofd, ret, bufferlen;
+    char buffer[128];
 
     unlink(FIFO_NAME); // 删除之前的同名管道文件
     ret = mkfifo(FIFO_NAME, 0777);
