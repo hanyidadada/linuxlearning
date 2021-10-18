@@ -27,6 +27,11 @@ int main(int argc, char *argv[]){
     }
     printf("\t%s\n", workdir);
     dir = opendir(workdir);
+    if (dir == NULL) {
+        perror("open dirtent error! check if exit:");
+        exit(-1);
+    }
+    
     copydir(dir, workdir);
     closedir(dir);
     printf("copy end\n");

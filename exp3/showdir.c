@@ -130,12 +130,12 @@ void showdpinfo(struct dirent *currentdp, const char workdir[], int sflag) {
     strcat(filepath, currentdp->d_name);
     lstat(filepath, &filestat);
     
+    mode = filestat.st_mode;
     if (S_ISLNK(filestat.st_mode) && sflag) {
         stat(filepath, &filestat); 
     }    
     showfiletype(&filestat);
     showfilemode(&filestat);
-    mode = filestat.st_mode;
     
     printf("%2d %s %s %5d ", filestat.st_nlink, getpwuid(filestat.st_uid)->pw_name, getgrgid(filestat.st_gid)->gr_name, filestat.st_size);
 
