@@ -25,11 +25,8 @@ int main(int argc, char *argv[]){
     if (strcmp(argv[1], "lock") == 0) {
         flag = 0;
     } else if (strcmp(argv[1], "unlock") == 0) {
-        flag = 0;
+        flag = 1;
     }
-    
-    
-    
 
     for (i = 0; i < N; i++) {
         pthread_mutex_init(&(mlock[i]), NULL);
