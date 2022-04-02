@@ -44,12 +44,10 @@ void showdir(DIR *dir, char flag[], const char workdir[])
     if (strchr(flag, 'a') != NULL) {
         aflag = 1;
     }
-    if (strchr(flag, 'A') != NULL)
-    {
+    if (strchr(flag, 'A') != NULL) {
         Aflag = 1;
     }
-    if (strchr(flag, 's') != NULL)
-    {
+    if (strchr(flag, 's') != NULL) {
         sflag = 1;
     }
     
